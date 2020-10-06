@@ -27,7 +27,7 @@ import Mugs from "./Prodcts and Services Pages/mugs";
 import Terms from "./Terms&Conditions";
 import Face from "./Prodcts and Services Pages/Covid-19 FaceShield";
 
-// import firebase from "./Firebase";
+import firebase from "./firebase/Firebase";
 
 import "bootstrap/dist/css/bootstrap.css";
 

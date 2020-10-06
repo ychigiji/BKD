@@ -1,112 +1,68 @@
-/**
- * Module dependencies.
- */
+const express = require("express");
+const bodyParser = require("body-parser");
+const request = require("request");
+const https = require("https");
 
-var express = require("../..");
-var path = require("path");
-var redis = require("redis");
+const app = express();
 
-var db = redis.createClient();
+app.use(express.static("public"));
+app.use(
+  bodyParser.urlencoded({
+    extened: true
+  })
+);
 
-// npm install redis
+app.get("/", function(req, res) {
+  res.sendFile(__dirname + "/signup.html");
+  // res.send("app is up and running")
+});
+app.post("/", function(req, res) {
+  const firstName = req.body.fName;
+  const lastName = req.body.lName;
+  const email = req.body.email;
 
-var app = express();
+  const data = {
+    members: [
+      {
+        email_address: email,
+        status: "subscribed",
+        merge_fields: {
+          FNAME: firstName,
+          LNAME: lastName
+        }
+      }
+    ]
+  };
 
-app.use(express.static(path.join(__dirname, "public")));
-
-// populate search
-
-db.sadd("ferret", "tobi");
-db.sadd("ferret", "loki");
-db.sadd("ferret", "jane");
-db.sadd("cat", "manny");
-db.sadd("cat", "luna");
-
-/**
- * GET search for :query.
- */
-
-app.get("/search/:query?", function(req, res) {
-  var query = req.params.query;
-  db.smembers(query, function(err, vals) {
-    if (err) return res.send(500);
-    res.send(vals);
+  const jsonData = JSON.stringify(data);
+  const url = "https://us17.api.mailchimp.com/3.0/lists/174c789af6";
+  const options = {
+    method: "POST",
+    auth: "yolie:595aa549c9277f2d59dd29f36fe75d0d-us17"
+  };
+  const request = https.request(url, options, function(response) {
+    if (response.statusCode == 200) {
+      res.sendFile(__dirname + "/success.html");
+    } else {
+      res.sendFile(__dirname + "/failure.html");
+    }
+    response.on("data", function(data) {
+      console.log(JSON.parse(data));
+    });
   });
+
+  request.write(jsonData);
+  request.end();
+  // console.log(firstName, lastName, email);
+});
+app.post("/failure", function(req, res) {
+  res.redirect("/");
+});
+app.listen(process.env.PORT || 3000, function() {
+  console.log("Server is running on port 3000.");
 });
 
-/**
- * GET client javascript. Here we use sendFile()
- * because serving __dirname with the static() middleware
- * would also mean serving our server "index.js" and the "search.jade"
- * template.
- */
+// 595aa549c9277f2d59dd29f36fe75d0d-us17
 
-app.get("/client.js", function(req, res) {
-  res.sendFile(path.join(__dirname, "client.js"));
-});
-
-/* istanbul ignore next */
-if (!module.parent) {
-  app.listen(3000);
-  console.log("Express started on port 3000");
-}
-
-// var createError = require("http-errors");
-// var express = require("express");
-// var path = require("path");
-// // const favicon = require("serve-favicon"); //added this
-// var cookieParser = require("cookie-parser");
-// var logger = require("morgan");
-// const cors = require("cors"); // addition we make
-// const fileUpload = require("express-fileupload"); //addition we make
-// const bodyParser = require("body-parser");
-
-// var indexRouter = require("./routes/index");
-// var usersRouter = require("./routes/users");
-
-// var app = express();
-
-// // view engine setup
-// app.set("views", path.join(__dirname, "views"));
-// app.set("view engine", "jade");
-
-// // uncomment after placing your favicon in /public
-// //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
-// app.use(logger("dev"));
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
-// app.use(cookieParser());
-
-// // Use CORS and File Upload modules here
-// app.use(cors());
-// app.use(fileUpload());
-// app.use("/public", express.static(__dirname + "/public"));
-
-// app.use(bodyParser.urlencoded({ extended: true }));
-
-// // below, also change this to
-// app.use("/public", express.static(__dirname + "/public"));
-
-// app.use(express.static(path.join(__dirname, "public")));
-
-// app.use("/", indexRouter);
-// app.use("/users", usersRouter);
-
-// // catch 404 and forward to error handler
-// app.use(function(req, res, next) {
-//   next(createError(404));
-// });
-
-// // error handler
-// app.use(function(err, req, res, next) {
-//   // set locals, only providing error in development
-//   res.locals.message = err.message;
-//   res.locals.error = req.app.get("env") === "development" ? err : {};
-
-//   // render the error page
-//   res.status(err.status || 500);
-//   res.render("error");
-// });
-
-// module.exports = app;
+// list ID
+//

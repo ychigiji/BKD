@@ -11,16 +11,7 @@ var firebaseConfig = {
   measurementId: "G-NRTYD20LC8"
 };
 
-// class Firebase {
-//   constructor() {
-
-//     // this.auth = firebase.auth();
-//   }
-// }
-
 var config = firebase.initializeApp(firebaseConfig);
+console.log(firebase.app().options);
 
 export default config;
-
-// export const provider = new firebase.auth.GoogleAuthProvider();
-// export const auth = firebase.auth();
