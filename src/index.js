@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
+import {BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
@@ -7,7 +9,10 @@ import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   // <FirebaseContext.Provider value={new Firebase()}>
-  <App />,
+  <BrowserRouter basename="/BKD">
+      <App />
+  </BrowserRouter>
+,
   // </FirebaseContext.Provider>,
   document.getElementById("root")
 );

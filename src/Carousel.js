@@ -37,7 +37,7 @@ class CarouselPage extends Component {
                 ></img>
               </a>
               <div>
-                <h1 class="centered">Wall Banners</h1>
+                <h1 className="centered">Wall Banners</h1>
                 <a href="/products/banners">
                   <button type="button" className="btn btn-danger btn-center">
                     Learn more
@@ -54,7 +54,7 @@ class CarouselPage extends Component {
                 ></img>
               </a>
               <div>
-                <h1 class="centered">Shirts</h1>
+                <h1 className="centered">Shirts</h1>
                 <a href="/products/shirts">
                   <button type="button" className="btn btn-danger btn-center">
                     Learn more

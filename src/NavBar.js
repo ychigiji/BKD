@@ -10,7 +10,7 @@ class NavBar extends Component {
     return (
       <div>
         <nav className="navbar nav-pills navbar-expand-sm ">
-          <a className="navbar-brand" href="/about">
+          <a className="navbar-brand" href="/BKD/about">
             <img
               className="navbar-image"
               src={require("./images/Products&Services/logo1.png")}
@@ -26,18 +26,18 @@ class NavBar extends Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="/">
-                  <b>Home Page</b>
+                <a className="nav-link" href="/BKD/">
+                  <b>Home</b>
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/about">
-                  <b>About Us</b>
+                <a className="nav-link" href="/BKD/about">
+                  <b>About</b>
                 </a>
               </li>
 
@@ -57,66 +57,66 @@ class NavBar extends Component {
                   className="dropdown-menu "
                   aria-labelledby="navbarDropdown"
                 >
-                  <a className="dropdown-item" href="/products">
+                  <a className="dropdown-item" href="/BKD/products">
                     Gallery
                   </a>
-                  <a className="dropdown-item" href="/products/architecture">
+                  <a className="dropdown-item" href="/BKD/products/architecture">
                     Architectural House Plans
                   </a>
-                  <a className="dropdown-item" href="/products/banners">
+                  <a className="dropdown-item" href="/BKD/products/banners">
                     Banners
                   </a>
-                  <a className="dropdown-item" href="/products/businesscards">
+                  <a className="dropdown-item" href="/BKD/products/businesscards">
                     Bussiness Cards
                   </a>
-                  <a className="dropdown-item" href="/products/mugs">
+                  <a className="dropdown-item" href="/BKD/products/mugs">
                     Coffee Mugs
                   </a>
-                  <a className="dropdown-item" href="/products/face">
+                  <a className="dropdown-item" href="/BKD/products/face">
                     Covid-19 Face Shield
                   </a>
-                  <a className="dropdown-item" href="/products/printing">
+                  <a className="dropdown-item" href="/BKD/products/printing">
                     Document printing and binding
                   </a>
-                  <a className="dropdown-item" href="/products/frames">
+                  <a className="dropdown-item" href="/BKD/products/frames">
                     Frame signboard systems
                   </a>
 
-                  <a className="dropdown-item" href="/products/gazebos">
+                  <a className="dropdown-item" href="/BKD/products/gazebos">
                     Gazebos
                   </a>
 
-                  <a className="dropdown-item" href="/products/keyrings">
+                  <a className="dropdown-item" href="/BKD/products/keyrings">
                     Keyrings
                   </a>
 
-                  <a className="dropdown-item" href="/products/labels">
+                  <a className="dropdown-item" href="/BKD/products/labels">
                     Labels and stickers
                   </a>
 
-                  <a className="dropdown-item" href="/products/photo">
+                  <a className="dropdown-item" href="/BKD/products/photo">
                     Photo panels
                   </a>
 
-                  <a className="dropdown-item" href="/products/signs">
+                  <a className="dropdown-item" href="/BKD/products/signs">
                     Signboards
                   </a>
-                  <a className="dropdown-item" href="/products/shirts">
+                  <a className="dropdown-item" href="/BKD/products/shirts">
                     Tshirts and fabrics
                   </a>
 
-                  <a className="dropdown-item" href="/products/vehicle">
+                  <a className="dropdown-item" href="/BKD/products/vehicle">
                     Vehicle graphics and lettering
                   </a>
                 </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/contact">
+                <a className="nav-link" href="/BKD/contact">
                   <b>Contact Us</b>
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/team">
+                <a className="nav-link" href="/BKD/team">
                   <b>Our Team</b>
                 </a>
               </li>

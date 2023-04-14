@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import {Route, Routes } from "react-router-dom";
 
 import "./styles.css";
 import "./App.css";
 
-import Home from "./Home";
+import Home from './Home'
 import About from "./About";
 import Contact from "./ContactUPage";
 import Products from "./Products";
@@ -36,40 +36,49 @@ import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 class App extends Component {
   render() {
     return (
-      <div className="footer-padding">
-        <BrowserRouter>
-          <div>
-            <NavBar />
+       <div className="footer-padding">
+      <NavBar />
+      <Routes>
+        
+    
+   
+    {/* <div> */}
+     
+      {/* Navbar  Links */}
+      <Route path="/"  element={<Home/>} />
+      <Route path="/BDK/about" element={<About/>} />
+      <Route path="contact" element={<Contact/>} />
+      <Route path="products" element={<Products/>} exact />
+      <Route path="team" element={<Team/>} />
 
-            {/* Navbar  Links */}
-            <Route path="/" component={Home} exact />
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/products" component={Products} exact />
-            <Route path="/team" component={Team} />
+      {/* Products and Services URLS */}
+      <Route path="/products/shirts" element={<Shirt/>} />
+      <Route path="/products/keyrings" element={<Keyrings/>} />
+      <Route path="/products/businesscards" element={<BusinessCards/>} />
+      <Route path="/products/architecture" element={<Architecture/>} />
+      <Route path="/products/printing" element={<Printing/>} />
+      <Route path="/products/photo" element={<Photo/>} />
+      <Route path="/products/labels" element={<Labels/>} />
+      <Route path="/products/gazebos" element={<Gazebos/>} />
+      <Route path="/products/signs" element={<Sign/>} />
+      <Route path="/products/frames" element={<Frames/>} />
+      <Route path="/products/banners" element={<Banners/>} />
+      <Route path="/products/vehicle" element={<Vehicle/>} />
+      <Route path="/products/mugs" element={<Mugs/>} />
+      <Route path="/products/face" element={<Face/>} />
 
-            {/* Products and Services URLS */}
-            <Route path="/products/shirts" component={Shirt} />
-            <Route path="/products/keyrings" component={Keyrings} />
-            <Route path="/products/businesscards" component={BusinessCards} />
-            <Route path="/products/architecture" component={Architecture} />
-            <Route path="/products/printing" component={Printing} />
-            <Route path="/products/photo" component={Photo} />
-            <Route path="/products/labels" component={Labels} />
-            <Route path="/products/gazebos" component={Gazebos} />
-            <Route path="/products/signs" component={Sign} />
-            <Route path="/products/frames" component={Frames} />
-            <Route path="/products/banners" component={Banners} />
-            <Route path="/products/vehicle" component={Vehicle} />
-            <Route path="/products/mugs" component={Mugs} />
-            <Route path="/products/face" component={Face} />
+      {/* Terms and conditions URLS */}
+      <Route path="/terms" element={<Terms/>} />
 
-            {/* Terms and conditions URLS */}
-            <Route path="/terms" component={Terms} />
-          </div>
-        </BrowserRouter>
-        <Footer />
+    {/* </div> */}
+  
+  
+  
+
+      </Routes>
+      <Footer />
       </div>
+      
     );
   }
 }
