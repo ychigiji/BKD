@@ -47,7 +47,7 @@ class ContactForm extends Component {
           <Form>
             <Form.Row>
               {controls.map(tawanda => (
-                <Col xs={tawanda.name == "address" ? 5 : 3}>
+                <Col xs={tawanda.name === "address" ? 5 : 3}>
                   <Form.Control placeholder={tawanda.placeholder} />
                 </Col>
               ))}

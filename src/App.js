@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 import "./styles.css";
 import "./App.css";
@@ -27,7 +27,6 @@ import Mugs from "./Prodcts and Services Pages/mugs";
 import Terms from "./Terms&Conditions";
 import Face from "./Prodcts and Services Pages/Covid-19 FaceShield";
 
-import firebase from "./firebase/Firebase";
 
 import "bootstrap/dist/css/bootstrap.css";
 
@@ -38,7 +37,7 @@ class App extends Component {
   render() {
     return (
       <div className="footer-padding">
-        <Router>
+        <BrowserRouter>
           <div>
             <NavBar />
 
@@ -68,7 +67,7 @@ class App extends Component {
             {/* Terms and conditions URLS */}
             <Route path="/terms" component={Terms} />
           </div>
-        </Router>
+        </BrowserRouter>
         <Footer />
       </div>
     );
