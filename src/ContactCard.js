@@ -1,9 +1,9 @@
 import React from "react";
 
-function ContactCard(props) {
+const ContactCard = (props) => {
   return (
-    <div className="">
-      <div className="">
+    <div >
+      <div >
         <img className="circle-img" src={props.img} alt="Contact Img" />
         <h2 className="info">{props.name}</h2>
         <h5 className="info">{props.post}</h5>
