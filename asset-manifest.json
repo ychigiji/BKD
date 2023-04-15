@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BKD/static/css/main.333bec4b.css",
-    "main.js": "/BKD/static/js/main.d9b85cc9.js",
+    "main.js": "/BKD/static/js/main.af960319.js",
     "static/media/Wall banner.jpg": "/BKD/static/media/Wall banner.39c4f1a3b6a2d0b795dc.jpg",
     "static/media/logo1.png": "/BKD/static/media/logo1.113729ae2802d7be6918.png",
     "static/media/Window sticker3.jpg": "/BKD/static/media/Window sticker3.95ebb048d9fc6bff7183.jpg",
@@ -65,10 +65,10 @@
     "static/media/react-bootstrap-carousel.svg": "/BKD/static/media/react-bootstrap-carousel.d5a2be71d939f960b831.svg",
     "index.html": "/BKD/index.html",
     "main.333bec4b.css.map": "/BKD/static/css/main.333bec4b.css.map",
-    "main.d9b85cc9.js.map": "/BKD/static/js/main.d9b85cc9.js.map"
+    "main.af960319.js.map": "/BKD/static/js/main.af960319.js.map"
   },
   "entrypoints": [
     "static/css/main.333bec4b.css",
-    "static/js/main.d9b85cc9.js"
+    "static/js/main.af960319.js"
   ]
 }
